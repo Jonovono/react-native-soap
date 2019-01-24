@@ -1,49 +1,162 @@
 /**
  * Sample React Native App
  * https://github.com/facebook/react-native
- *
- * @format
  * @flow
  */
 
-import React, {Component} from 'react';
-import {Platform, StyleSheet, Text, View} from 'react-native';
+import React, { Component } from 'react';
+import {
+  Platform,
+  StyleSheet,
+  Text,
+  View,
+  TouchableOpacity,
+  Image
+} from 'react-native'; 
 
-const instructions = Platform.select({
-  ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
-  android:
-    'Double tap R on your keyboard to reload,\n' +
-    'Shake or press menu button for dev menu',
-});
+// let bg = require('./src/assets/images/lobbyBg.jpg')
+// let logo = require('./src/assets/images/gameroom.png')
+// let screenshot = require('./src/assets/images/screenshot.png')
+// let lines = require('./src/assets/images/lines.png')
 
-type Props = {};
-export default class App extends Component<Props> {
+import Onboarder from './react-native-soap/index'
+
+import {BasicScreen} from './react-native-soap/screens'
+// import {SimpleButtonScreen, TextEntryScreen, PhoneNumberAuthFlow, PermissionScreen} from './src/modules'
+
+let backgroundColor = 'white'
+
+
+class View1 extends React.Component {
+  press = () => {
+    console.log("HUZ", this.props)
+    this.props.screenProps.next()
+  }
   render() {
     return (
-      <View style={styles.container}>
-        <Text style={styles.welcome}>Welcome to React Native!</Text>
-        <Text style={styles.instructions}>To get started, edit App.js</Text>
-        <Text style={styles.instructions}>{instructions}</Text>
-      </View>
+      <TouchableOpacity onPress={this.press} style={{backgroundColor: 'blue', flex: 1}} />
+    )
+  }
+}
+
+class View2 extends React.Component {
+  render() {
+    return (
+      <TouchableOpacity onPress={this.props.screenProps.back} style={{backgroundColor: 'green', flex: 1}} />
+    )
+  }
+}
+
+const bs = BasicScreen({
+  footer: 'BOOYA',
+  header: "BUNCH"
+})
+
+// let PhoneAuth = PhoneNumberAuthFlow()
+
+// let BasicView2 = SimpleButtonScreen({
+//   backgroundStyle: {
+//     backgroundColor
+//   },
+//   buttonText: 'TEST',
+//   footer: 'Please continue',
+//   middle: <Image source={screenshot} style={{resizeMode: 'contain', flex: 1}} />
+// })
+
+// let BasicView3 = SimpleButtonScreen({
+//   backgroundStyle: {
+//     backgroundColor
+//   },
+//   buttonText: 'OK?'
+// })
+
+// let TextView = TextEntryScreen({
+//   backgroundStyle: {
+//     backgroundColor
+//   },
+//   stateKey: 'username',
+//   placeholder: 'test'
+// })
+
+// let PhoneView = PhoneNumberAuthFlow({
+//   backgroundStyle: {
+//     backgroundColor
+//   },
+//   buttonText: 'Send SMS',
+//   stateKey: 'phone',
+// })
+
+// let Permission = PermissionScreen({
+//   header: 'One last thing...',
+//   stateKey: 'permissions',
+//   permissions: [
+//     {
+//       permission: 'microphone',
+//       title: 'Allow Microphone',
+//       subtitle: 'So your friends can hear your beautiful voice',
+//       required: true
+//     },
+//     {
+//       permission: 'camera',
+//       title: 'Allow Camera',
+//       subtitle: 'So your friends see your pretty face',
+//       required: true
+//     },
+//     {
+//       permission: 'notifications',
+//       title: 'Allow Notifications',
+//       subtitle: 'So you know when your friends have arrived',
+//       required: false
+//     }
+//   ]
+// })
+
+const OnboarderView = Onboarder({
+  Initial: {
+    screen: View1
+  },
+  Copy: {
+    screen: View2
+  },
+  Basic: {
+    screen: bs
+  }
+  // One: {
+  //   screen: TextView
+  // },
+  // Two: {
+  //   screen: BasicView3
+  // },
+  // Phone : {
+  //   screen: PhoneView
+  // },
+  // Auth: {
+  //   screen: PhoneAuth
+  // },
+  // Per: {
+  //   screen: Permission
+  // }
+}, {
+  order: ['Basic', 'Copy'],
+  // order: ['Per', 'One', 'Initial', 'Auth'],
+  animation: 'push' // "slide", "push"
+})
+
+
+export default class App extends Component {
+  onEnd = (data) => {
+    console.log("DATA", data)
+  }
+
+  onTransition = (from, to, data) => {
+    console.log("INFO", from, to, data)
+  }
+
+  render() {
+    console.disableYellowBox = true
+    return (
+      <OnboarderView onEnd={this.onEnd} onTransition={this.onTransition} />
     );
   }
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
-  },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
-  },
-});
