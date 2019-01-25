@@ -151,6 +151,8 @@ Here are some examples of stuff I want to let you build eventually:
 <p align="center">
  <img src="https://i.imgur.com/YY53kjh.gif" alt="drawing" width="300"/>
   <img src="https://i.imgur.com/ZHCsQ5t.gif" alt="drawing" width="300"/>
+     <img src="./examples/smsauthflow.gif" alt="drawing" width="300"/>
+
 </p>
 
 
@@ -160,7 +162,7 @@ We currently use something like this for our onboarding at Bunch. Here is a gif 
 
 Check out our app here to try out the onboarding :) : https://itunes.apple.com/us/app/bunch-group-video-chat-games/id1294869021?mt=8
 
-<iframe src="https://giphy.com/embed/5hfihtp26FG3VUhCtr" width="270" height="480" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/5hfihtp26FG3VUhCtr">via GIPHY</a></p>
+<img src="./examples/bunchexample.gif" alt="drawing" width="300"/>
 
 
 
