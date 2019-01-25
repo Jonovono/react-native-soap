@@ -14,6 +14,8 @@ export default BasicScreenView = ({
     headerStyle,
 
     middle,
+    middleContainerStyle,
+    middleStyle,
 
     footer,
     footerContainerStyle,
@@ -58,7 +60,7 @@ export default BasicScreenView = ({
               {header}
             </FixedHeightView>
 
-            <FlexHeightView>
+            <FlexHeightView containerStyle={middleContainerStyle} style={middleStyle}>
                 {middle}
             </FlexHeightView>
 

@@ -12,7 +12,7 @@ const HeaderText = ({ text, style }) => {
 const styles = StyleSheet.create({
   textStyle: {
     fontSize: 25,
-    fontWeight: "600",
+    fontWeight: "500",
     fontFamily: 'AvenirNext-Regular',
   }
 });

@@ -1,25 +1,31 @@
 {
-  "name": "RNSoap",
+  "name": "react-native-soap",
   "version": "0.0.1",
-  "private": true,
+  "description": "Sexy 🕺 Onboarder with Authentication and Permissions for React Native 🤑",
+  "main": "index.js",
+  "directories": {
+    "example": "example"
+  },
   "scripts": {
-    "start": "node node_modules/react-native/local-cli/cli.js start",
-    "test": "jest"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "dependencies": {
-    "is-url": "^1.2.4",
-    "react": "16.6.3",
-    "react-native": "0.57.8",
-    "react-native-gesture-handler": "^1.0.12",
-    "react-navigation": "^3.0.9"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jonovono/react-native-soap.git"
   },
-  "devDependencies": {
-    "babel-jest": "23.6.0",
-    "jest": "23.6.0",
-    "metro-react-native-babel-preset": "0.51.1",
-    "react-test-renderer": "16.6.3"
+  "keywords": [
+    "onboarder",
+    "react",
+    "native",
+    "react",
+    "auth",
+    "login",
+    "onboarding"
+  ],
+  "author": "Jordan Howlett <jordan@howlett.io>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Jonovono/react-native-soap/issues"
   },
-  "jest": {
-    "preset": "react-native"
-  }
+  "homepage": "https://github.com/Jonovono/react-native-soap#readme"
 }

@@ -5,7 +5,7 @@ const { width, height } = Dimensions.get("window");
 
 const HeaderImage = ({ image, style }) => {
     renderImage = () => {
-        if (typeof header === 'string') {
+        if (typeof image === 'string') {
             return <Image source={{uri: image}} style={[styles.style, style]} />
         } else {
             return <Image source={image} style={[styles.style, style]} />

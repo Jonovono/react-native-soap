@@ -10,7 +10,7 @@ const FixedHeightView = ({children, containerStyle, style}) => {
       return children
     }
     else if (typeof children === 'number' || (typeof children === 'string' && isUrl(children))) {
-      return <HeaderImage image={data} style={style} />
+      return <HeaderImage image={children} style={style} />
     }
     else {
       return <HeaderText text={children} style={style} />
