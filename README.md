@@ -103,6 +103,8 @@ Also when setting up the Onboarder you can specify a few props
 
 ### BasicScreen
 
+`header, middle, footer` can contain a component, image url, or image and it should handle it 'intelligently'
+
 * backgroundStyle
 * backgroundImage
 * left
@@ -163,6 +165,14 @@ We currently use something like this for our onboarding at Bunch. Here is a gif 
 Check out our app here to try out the onboarding :) : https://itunes.apple.com/us/app/bunch-group-video-chat-games/id1294869021?mt=8
 
 <img src="./examples/bunchexample.gif" alt="drawing" width="300"/>
+
+## Inspiration
+
+I looked into using some of these but wanted something a bit more feature packed - but nonetheless they are awesome - and depending on what you are making may be better suited for you.
+
+* https://github.com/jfilter/react-native-onboarding-swiper
+* https://github.com/jacklam718/react-native-onboarding-component
+* https://github.com/goshakkk/react-native-simple-onboarding
 
 ## Questions/Comments?
 
