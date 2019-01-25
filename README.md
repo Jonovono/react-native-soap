@@ -164,5 +164,9 @@ Check out our app here to try out the onboarding :) : https://itunes.apple.com/u
 
 <img src="./examples/bunchexample.gif" alt="drawing" width="300"/>
 
+## Questions/Comments?
 
+Feel free to open a ticket with stuff you would like to see. I'd love to know if others find this useful, if not I might not work on it too much more. 
+
+Otherwise, feel free to email me at jordan@howlett.io
 
