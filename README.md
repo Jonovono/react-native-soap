@@ -142,6 +142,7 @@ There is lots left I want to do. I havn't brought over everything from our app i
 * Permission flow
 * Add friends flow
 * Avatar caputure flow
+* Better default styling aka more sexy
 * Theming system to easily add and create new themes
 * Custom screen transitions
 * Separate ordering for Android vs iOS
